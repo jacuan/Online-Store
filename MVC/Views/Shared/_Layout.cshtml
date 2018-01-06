@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - DigitalX</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryui") 
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+</head>
+
+<body>
+
+    <header id="headerSocial">
+        <ul id="headerSocialUrl">
+            <li><a href="https://www.facebook.com/" target="_blank"><img class="imgSocial" src="~/Content/Pictures/facebook.png" /></a></li>
+            <li><a href="https://plus.google.com/" target="_blank"><img class="imgSocial" src="~/Content/Pictures/google.png" /></a></li>
+            <li><a href="http://www.youtube.com/" target="_blank"><img class="imgSocial" src="~/Content/Pictures/youtube.png" /></a></li>
+            <li>0800 DigitalX (777 777)</li>
+        </ul>
+    </header>
+
+    <div>
+        <a href="~/Home/Index"><img id="logo" src="~/Content/Pictures/logo.png" alt="LOGO" /></a>
+    </div><br />
+
+    <div id="topNavigationDiv">
+        <ul id="topNavigationBar">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            @if (Session["authenticatedUser"] == null && Session["authenticatedToken"] == null)
+            {
+                <li class="loginAndLogOutUrl">@Html.ActionLink("Register", "CreateCustomer", "Membership")</li>
+                        <li class="loginAndLogOutUrl" id="loginButton"><a class="loginButtonClass">Login</a></li>
+            }
+            else if (Session["authenticatedUser"] != null && Session["authenticatedToken"] != null)
+            {
+                <li class="loginAndLogOutUrl">@Html.ActionLink("Welcome " + Session["authenticatedUserFirstName"].ToString() + " !", "UserCenter", "Membership")</li>
+                        <li class="loginAndLogOutUrl">@Html.ActionLink("Sign Out", "Logout", "Membership")</li>
+            }
+        </ul>
+    </div><br />
+
+    @{ Html.RenderAction("ShoppingCart", "Home");}
+
+    <div id="loginForm" class="login">
+        <p>
+            User Name
+            <br />
+            <span class="error1"></span>
+            <br />
+            <input id="userName" name="userName" type="text" />
+        </p>
+        <p>
+            Password
+            <br />
+            <span class="error2"></span>
+            <br />
+            <input id="password" name="password" type="password" /><br />
+        </p>
+        <p>
+            <span class="error3"></span>
+            <br />
+            <input id="submitLogin" name="submitLogin" type="button" value="Submit" />
+        </p>
+        <br />
+        <br />
+        <p>
+            <a id="loginLink" href="~/Membership/CreateCustomer">Register</a>
+        </p>
+    </div>
+
+    @Html.Partial("_onlineHelp")
+
+    <div id="confirmationMessage"></div>
+
+    <div>
+        @RenderBody()
+
+        <footer>
+            <p class="homeFooter">&copy; @DateTime.Now.Year - DigitalX</p>
+        </footer>
+
+        <span id="hiddenProductID"></span>
+
+        @if (Session["authenticatedUser"] != null && Session["authenticatedToken"] != null)
+        {
+            <input type="text" id="hiddenCustomerID" value="@Session["authenticatedUser"].ToString()"/>
+        }
+        else 
+        {
+            <input type="text" id="hiddenCustomerID" value=""/>
+        }
+
+        <div id="hiddenOrderDetailId"></div>
+    </div>
+
+    @Scripts.Render("~/bundles/memberJavaScript")
+    @Scripts.Render("~/bundles/displayProductDetails")
+    @Scripts.Render("~/bundles/purchaseJavaScript")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

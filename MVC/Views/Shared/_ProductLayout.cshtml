@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/SideCategoryBar.css" rel="stylesheet" />
+
+<div>
+    @{Html.RenderAction("GetCategoryList", "Home");}
+</div>
+
+<div>
+    @RenderBody()
+</div>
+
+<div id="popupProductDetail">
+    <table id="productDetailTable">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Unit in Stock</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="productDetailTableBody"></tbody>
+    </table>
+
+    <div>
+       <br />
+       <h4>Quantity:</h4><input id="orderQuantity" type="number" name="quantity" min="1" value="1">
+       <br />
+       <br />
+       <button id="addToCart">Add to Cart</button>
+    </div>
+</div>

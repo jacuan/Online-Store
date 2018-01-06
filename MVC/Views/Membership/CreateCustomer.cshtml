@@ -1,0 +1,52 @@
+﻿@if (Session["authenticatedUser"] == null && Session["authenticatedToken"] == null)
+{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+
+@model DigitalXData.CustomerDTO
+
+    ViewBag.Title = "CreateCustomer";
+
+
+    <h2 class="titleStyle1">Register as a Member</h2>
+
+
+    using (Html.BeginForm("CreateCustomer", "Membership", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="registration-form">
+
+            <p>@Html.LabelFor(model => model.UserName, new { htmlAttributes = new { @class = "form-label" } })</p>
+            <p>@Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-field" } })</p>
+            <p>@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "form-error" })</p>
+
+            <p>@Html.LabelFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-label" } })</p>
+            <p>@Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-field" } })</p>
+            <p>@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "form-error" })</p>
+
+
+            <p>@Html.LabelFor(model => model.LastName, new { htmlAttributes = new { @class = "form-label" } })</p>
+            <p>@Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-field" } })</p>
+            <p>@Html.ValidationMessageFor(model => model.LastName, "", new { @class = "form-error" })</p>
+
+            <p>@Html.LabelFor(model => model.Password, new { htmlAttributes = new { @class = "form-label" } })</p>
+            <p>@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-field" } })</p>
+            <p>@Html.ValidationMessageFor(model => model.Password, "", new { @class = "form-error" })</p>
+
+            <p>@Html.LabelFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-label" } })</p>
+            <p>@Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-field" } })</p>
+            <p>@Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "form-error" })</p>
+            <br />
+            <p>
+                <input type="submit" value="Register" class="buttonType1" />
+            </p>
+        </div>
+    }
+}
+else
+{
+    Response.Redirect("~/Membership/UserCenter");
+}

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DigitalXData.ProductCategory>
+
+@{
+    Layout = null;
+}
+
+<div>
+    <ul id="sideCategoryBar1">
+        <li><h3>Main Categories:</h3></li>
+        @foreach (var item in Model)
+        {
+            if (item.ParentCategory == 0)
+            {
+                <li><a href="~/Product/GetProductList/@item.CategoryID">@Html.DisplayFor(modelItem => item.Category)</a></li>
+            }
+        }
+    </ul>
+    <br />
+    <ul id="sideCategoryBar2">
+        <li><h4>Sub-Categories:</h4></li>
+        @{
+            string parentCategory = "";
+            foreach (var item in Model)
+            {
+                if (item.ParentCategory == 1) { parentCategory = "DVD"; }
+                else if (item.ParentCategory == 2) { parentCategory = "Game"; }
+                else if (item.ParentCategory == 3) { parentCategory = "Console"; }
+                else if (item.ParentCategory == 4) { parentCategory = "PC"; }
+                else if (item.ParentCategory == 5) { parentCategory = "Hand Nook"; }
+                else if (item.ParentCategory == 7) { parentCategory = "Components"; }
+
+                if (item.ParentCategory > 0)
+                {
+                    <li><a href="~/Product/GetProductList/@item.CategoryID">@Html.DisplayFor(modelItem => item.Category)<span id="parentCategory">(@parentCategory)</span></a></li>
+                }
+            }
+        }
+
+    </ul>
+</div>

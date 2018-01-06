@@ -1,0 +1,67 @@
+﻿   ul#sideCategoryBar1 {
+        list-style-type: none;
+        margin-left:0;
+        padding: 30px;
+        width: 12%;
+        background-color: #004b8d;
+        overflow: auto;
+        position:initial;
+        line-height:30px;
+        text-align:center;
+        font-size:14px;
+        font-weight:bold;
+        color:aqua
+    }
+
+    ul#sideCategoryBar1 li a {
+        color: #7dc2de;
+        text-decoration: none;
+    }
+
+      ul#sideCategoryBar1 li a:hover {
+        color: #f8ba31;
+        background-color:#000000
+    }
+
+        ul#sideCategoryBar2 {
+        list-style-type: none;
+        margin-left:0;
+        margin-top:-50px;
+        padding: 0px;
+        width: 12%;
+        background-color: #004b8d;
+        overflow: auto;
+        position:initial;
+        line-height:30px;
+        text-align:center;
+        font-size:14px;
+        font-weight:bold;
+        color:aqua
+    }
+
+    ul#sideCategoryBar2 li a {
+        color: #7dc2de;
+        text-decoration: none;
+    }
+
+    ul#sideCategoryBar2 li a:hover {
+        color: #f8ba31;
+        background-color:#000000
+    }
+
+    span#parentCategory{
+        color:aqua;
+        font-weight:normal;
+        margin-left:5px;
+
+     }
+
+     /*ul#sideCategoryBar li a.active {
+            background-color: cornflowerblue;
+            color: black;
+        }
+
+     ul#sideCategoryBar li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }*/

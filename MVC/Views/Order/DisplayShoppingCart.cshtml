@@ -1,0 +1,158 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_ProductLayout.cshtml";
+}
+
+@model IEnumerable<DigitalXData.ShoppingCartInformation>
+
+<div id="checkoutPageMainDiv">
+
+    <h2>Products</h2>
+    <div>
+        @if (Model != null)
+        {
+                decimal totalPrice = 0;
+                int orderId = 0;
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProductName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Quantity)
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="checkoutTableBody">
+
+                @foreach (var item in Model)
+                {
+                    orderId = item.OrderId;
+                    totalPrice = totalPrice + (item.Quantity * item.Price);
+
+                        <tr class="sum">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProductName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                <input type="number" class="inputQuantity" value="@item.Quantity" />
+                            </td>
+                            <td>
+                                <button id=@item.OrderDetailId class="defaultButton" onclick="updateQuantity(this.id)">Update</button>
+                            </td>
+                            <td><button id=@item.OrderDetailId class="defaultButton" onclick="deleteItem(this.id)">Delete</button></td>
+                        </tr>
+                }
+                </tbody>
+            </table>
+            <hr />
+            <br />
+            <br />
+            <div class="totalPriceDiv">
+                <h3>Total Price: </h3>
+                <p>
+                    <h3 id="displayTotalPrice">@totalPrice.ToString("C")</h3>
+                </p>
+            </div>
+            <div id="hiddenOrderId">@orderId</div>
+        }
+        else
+        {
+            <h2 id="noItemsInShoppingCart">@ViewBag.errorMessage</h2>
+        }
+    </div>
+
+    <h2>Delivery Address</h2>
+   
+    <div>
+        @if (Model != null)
+        {
+            <a id="addAddress" onclick="addAnAddress()"><h3 class="headerStyle3">Add an Address</h3></a>
+
+            <table id="addressTable" class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="addressTableBody"></tbody>
+            </table>
+
+            <div id="addressTableMessage"></div>
+        }
+        else
+        {
+            <h3>@ViewBag.errorMessage</h3>
+        }
+    </div>
+
+    <h2>Payment</h2>
+
+    <div id="payDiv">
+        <br />
+        <br />
+        Credit Card Information
+        <br />
+        <br />
+        <button id="pay" onclick="pay()">Pay</button>
+    </div>
+</div>
+
+<div id="addressForm"></div>
+
+<div id="hiddenBackorderTable">
+    <h3>The available stocks for following products do not meet your order quantity requirement.</h3>
+    <br />
+    <h4>If you click "Proceed with Backorder" button, a backorder will be automatically created.</h4>
+    <h4>If you do not want to place a backorder, please close this window and adjust your order quantity accordingly.</h4>
+    <br />
+    <table id="backorderTable" class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Available Stock</th>
+                <th class="theadType1">You Ordered</th>
+            </tr>
+        </thead>
+        <tbody id="backorderTableBody"></tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <button id="backorderButton">Proceed with Backorder</button>
+</div>
+
+<script src="~/Scripts/checkoutPageJavaScript.js"></script>
+<script>
+    function addAnAddress() {
+
+        $("#addressForm").dialog({
+            autoOpen: false,
+            resizable: false,
+            modal: true,
+            open: function (event, ui) {
+                $(this).load("@Url.Action("OpenAddressForm", "Home")");
+            },
+        });
+        $("#addressForm").dialog("option", "width", 1000);
+        $("#addressForm").dialog("option", "height", 700);
+
+        globalCloseVariable = $('#addressForm').dialog('open');
+    };
+</script>
+

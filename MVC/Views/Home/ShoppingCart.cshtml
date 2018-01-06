@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+@{
+    string cartItemsCount = "";
+
+    if (Session["authenticatedUser"] == null && Session["authenticatedToken"] == null)
+    {
+        cartItemsCount = "0";
+    }
+    else if (Session["authenticatedUser"] != null && Session["authenticatedToken"] != null)
+    {
+        cartItemsCount = Session["itemNumberInShoppingCart"].ToString();
+    }
+}
+
+<a href="~/Order/DisplayShoppingCart">
+    <div id="shoppingCart">
+        <p class="shoppingCart">
+            <img src="~/Content/Pictures/cart.png" /> Shopping Cart : <span id="cartItemsCount">@cartItemsCount items</span>
+        </p>
+    </div>
+</a>
+
+<div id="hiddenCartItemsCoutn">@cartItemsCount</div>

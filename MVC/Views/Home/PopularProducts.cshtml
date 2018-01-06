@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+
+}
+
+@model IEnumerable<DigitalXData.PopularProduct>
+
+<div>
+    <span class="fontType1">Popular Products:</span>
+    <br />
+    <br />
+    <br />
+
+    @foreach (var item in Model)
+    {
+        var base64 = Convert.ToBase64String(item.Picture);
+        var imgSrc = string.Format("data:image/jpeg; base64, {0}", base64);
+        <div id="popularProducts">
+                <div><a class="productImg" id="@item.ProductID" onclick="displayDetail(this.id)"><img src="@imgSrc" /></a></div>
+                <br />
+                <div><a class="productName" id="@item.ProductID" onclick="displayDetail(this.id)">@Html.DisplayFor(modelItem => item.ProductName)</a></div>
+            <br />
+            <div>Price:  @Html.DisplayFor(modelItem => item.Price)</div>
+            <br />
+            <br />
+        </div>
+    }
+</div>

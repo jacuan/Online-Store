@@ -1,0 +1,39 @@
+﻿  ul#sideMemberBar {
+        list-style-type: none;
+        margin-left:0px;
+        margin-top:0px;
+        padding: 0px;
+        width: 20%;
+        height:160px;
+        background-color: #004b8d;
+        overflow: auto;
+        line-height:60px;
+        text-align:center;
+        font-size:20px;
+        font-weight:bold;
+        color:aqua;
+        border:1px solid;
+           
+    }
+
+    ul#sideMemberBar li a {
+        display: block;
+        color: #7dc2de;
+        padding: 8px 0 8px 16px;
+        text-decoration: none;
+    }
+
+      ul#sideMemberBar li a:hover {
+        color: #f8ba31;
+        background-color:#000000;
+        cursor:pointer;
+    }
+
+        ul#sideMemberBar li{
+        text-align:center;
+        border-bottom:1px solid;
+    }
+
+    ul#sideMemberBar li:last-child {
+    border-bottom: none;
+}

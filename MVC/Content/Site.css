@@ -1,0 +1,442 @@
+﻿/*body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}*/
+
+/* Set padding to keep content from hitting the edges */
+/*.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}*/
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+/*.dl-horizontal dt {
+    white-space: normal;
+}*/
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+body{
+    background-color:#2191c0;
+}
+
+#headerSocial{
+    margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:30px;
+    width:80%;
+    color:#f5b832;
+    text-align:center;
+}
+
+ul#headerSocialUrl{
+    padding:0;
+}
+
+ul#headerSocialUrl li{
+    display:inline;
+    font-size:25px;
+    font-weight:bold;
+    margin:5px;
+}
+
+ul#headerSocialUrl li a:hover{
+    background-color:none;
+}
+
+img.imgSocial{
+    width:25px;
+    height:25px;
+}
+
+#topNavigationDiv{
+    margin:0 auto;
+    width:50%;
+    text-align:left;
+}
+
+ul#topNavigationBar{
+    padding:0;
+    margin-top:-20px;
+}
+
+ul#topNavigationBar li{
+    display:inline;
+    line-height:40px;
+}
+
+ul#topNavigationBar a{
+    background-color:#505152;
+    color:#f8ba31;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:4px;
+    font-size:1.5em;
+    margin:5px;
+}
+
+ul#topNavigationBar li a:hover{
+    background-color:#fbbc31;
+    color:black;
+}
+
+div#homeMainDiv1{
+    margin-left:12%;
+    margin-top:-1107px;
+    width:1500px;
+    background:url(../Content/Pictures/frame.jpg) repeat;
+    color:black;
+    padding:5px
+}
+
+div#homeMainDiv2{
+    margin-left:12%;
+    margin-top:50px;
+    margin-bottom:50px;
+    width:1500px;
+    color:black;
+    padding:5px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+div#homeMainDiv2 .fontType1{
+    font-size:20px;
+    color:darkviolet;
+    margin-left:95px;
+}
+
+div#checkoutPageMainDiv{
+    margin-left:12%;
+    margin-top:-1133px;
+    margin-bottom:800px;
+    width:1500px;
+    color:aqua;
+    padding:5px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+
+p.homeFooter{
+    color:blue;
+    font-size:small;
+    text-align:center;
+}
+
+#topNavigationBar li.loginAndLogOutUrl a{
+     background-color:#f8ba31;
+     color:black;
+}
+
+#topNavigationBar li.loginAndLogOutUrl a:hover{
+    color:#f8ba31;
+    background-color:#505152;
+    text-decoration:none;
+}
+
+#topNavigationBar a.loginButtonClass{
+     cursor:pointer;
+}
+
+#loginForm{
+    display:none;
+    text-align:center
+}
+
+img#logo{
+    width:300px;
+    height:100px;
+    margin-top:-80px;
+    margin-left:20px;
+}
+
+div#popularProducts{
+    display:inline-block;
+    margin:2px 100px 2px 100px;
+}
+
+div#onelineSupport{
+    margin:500px 0px 0px 1700px;
+    position:fixed;
+    cursor:pointer;
+}
+
+img#floating{
+    -webkit-animation-name: Floating;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+
+    -moz-animation-name: Floating;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+
+    -o-animation-name: Floating;
+    -o-animation-duration: 3s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: ease-in-out;
+
+    animation-name: Floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes Floating{
+    from {-webkit-transform:translate(0, 0px);}
+    65% {-webkit-transform:translate(0, 50px);}
+    to {-webkit-transform: translate(0, -0px);    }    
+}
+    
+@-moz-keyframes Floating{
+    from {-moz-transform:translate(0, 0px);}
+    65% {-moz-transform:translate(0, 50px);}
+    to {-moz-transform: translate(0, -0px);}    
+}
+
+@-o-keyframes Floating{
+    from {-o-transform:translate(0, 0px);}
+    65% {-o-transform:translate(0, 50px);}
+    to {-o-transform: translate(0, -0px);}    
+}
+
+@keyframes Floating{
+    from {transform:translate(0, 0px);}
+    65% {transform:translate(0, 50px);}
+    to {transform: translate(0, -0px);}    
+}
+
+div#onlineSupportWindow{
+    text-align:center;
+    display:none;
+}
+
+div#productList{
+    margin-left:12%;
+    margin-top:-1135px;
+    margin-bottom:600px;
+    width:1450px;
+    color:black;
+    padding:5px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+div#popupProductDetail{
+    display:none;
+    text-align:center;
+    margin:0 auto;
+}
+
+table#productDetailTable{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    width:100%;
+    border-collapse:collapse;
+}
+
+table#productDetailTable th, td{
+    font-size:1.2em;
+    border:none;
+    padding:3px 7px 2px 7px;
+}
+
+table#productDetailTable th 
+{
+    font-size:1.4em;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#A7C942;
+    color:#fff;
+}
+
+a.productImg{
+        cursor:pointer;
+        text-decoration:none;
+    }
+
+a.productName{
+        cursor:pointer;
+        color:black;
+    }
+
+#loginLink{
+    color:blue; 
+    font-weight:bold; 
+    text-decoration:underline;
+}
+
+.error1, .error2, .error3{
+    color:red;
+    font-size:smaller;
+}
+
+#error1LoginPage, #error2LoginPage, #error3LoginPage{
+    color:red;
+    font-size:smaller;
+}
+
+.form-field, .form-label{
+    color:black;
+    width:300px;
+    height:50px;
+    font-size:large;
+}
+
+.registration-form{
+    text-align:center;
+    font-size:16px;
+    padding: 10px;
+    border:solid 2px #000000; 
+    margin:50px;
+}
+
+.form-error{
+    color:purple;
+}
+
+.buttonType1{
+    width:300px;
+    height:50px;
+}
+
+.loginPage{
+    text-align:center;
+    /*font-size:16px;*/
+    padding: 10px;
+    border:solid 2px #000000; 
+    /*margin:50px;*/
+}
+
+.error1LoginPage, .error2LoginPage, .error3LoginPage{
+    color:purple;
+}
+
+#shoppingCart{
+   margin-left:75%;
+   margin-bottom:8%;
+   margin-top:-8%;
+   background-color:#f8ba31;
+   width:18em;
+   height:3em;
+   border-radius:1em;
+   text-align:center;
+   color:#2a80b9;
+   text-decoration-line:underline;
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-weight:bold;
+   font-size:16px;
+}
+
+#shoppingCart .shoppingCart{
+    padding:8px;
+    margin:0 auto;
+}
+
+.titleStyle1{
+    margin-left:5%;
+}
+
+.contentStyle1{
+    margin-left:25%;
+    width:70%;
+    height:800px;
+    color:#000000;
+}
+
+.contentStyle1 address{
+    font-size:20px;
+}
+
+.contentStyle1 a{
+    color:blue;
+}
+
+.hidden{
+    display:none;
+}
+
+#hiddenProductID, #hiddenCustomerID, #updateProductQuantity, #hiddenOrderDetailId, #hiddenCartItemsCoutn, #hiddenOrderId, #hiddenOrderDetailedIDCollection, #hiddenBackorderTable{
+    display:none;
+}
+
+div#confirmationMessage{
+    display:none;
+    position:fixed;
+    margin-top:120px;
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+    width:100%;
+    height:30px;
+    top:50px;
+}
+
+div#updateProductQuantity{
+    text-align:center;
+}
+
+#checkOutButton{
+    width:120px;
+    height:40px;
+    margin-left:80%;
+}
+
+div.totalPriceDiv{
+    margin-left:80%;
+}
+
+#addressTableBody tr:nth-child(even){
+    background-color: #f2f2f2
+}
+
+#payDiv{
+    text-align:center;
+    font:20px;
+}
+
+#pay{
+    width:100px;
+    height:50px;
+}
+
+div.messageDiv{
+    margin-left:12%;
+    margin-top:-1135px;
+    margin-bottom:600px;
+    width:1450px;
+    color:black;
+    padding:5px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+#addAddress{
+    text-decoration:none;   
+}
+h3.headerStyle3{
+    text-decoration: underline;
+    cursor:pointer;
+    color:blue;
+    font-weight:bold;
+}
+
+input.addressRadioButton {
+    cursor: pointer;
+}
+
+th.theadType1{
+    color: red;
+    font-weight:bold;
+}

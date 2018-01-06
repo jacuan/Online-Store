@@ -1,0 +1,23 @@
+﻿
+@if (Session["authenticatedUser"] == null && Session["authenticatedToken"] == null)
+{
+
+<div id="loginPage" class="loginPage">
+        <p><label class="form-label">User Name</label></p>
+        <p><span id="error1LoginPage"></span></p>
+        <p><input id="userNameLoginPage" class="form-field" name="userNameLoginPage" type="text" /></p>
+        <p><label class="form-label">Password</label></p>
+        <p><span id="error2LoginPage"></span></p>
+        <p><input id="passwordLoginPage" class="form-field" name="passwordLoginPage" type="password" /></p>
+        <br />
+        <p>
+        <span id="error3LoginPage"></span>
+        <br />
+        <input id="submitLoginLoginPage" class="buttonType1" name="submitLoginLoginPage" type="button" value="Submit" />
+        </p>
+</div>
+}
+else
+{
+    Response.Redirect("~/Membership/UserCenter");
+}

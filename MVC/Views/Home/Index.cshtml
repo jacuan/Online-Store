@@ -1,0 +1,12 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_ProductLayout.cshtml";
+}
+
+<div id="homeMainDiv1">
+@{ Html.RenderAction("SlideShow", "Home");}
+</div>
+
+<div id="homeMainDiv2">
+    @{ Html.RenderAction("PopularProducts", "Home");}
+</div>

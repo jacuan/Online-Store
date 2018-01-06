@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_ProductLayout.cshtml";
+}
+
+@model IEnumerable<DigitalXData.ProductDTO>
+
+
+<div id="productList">
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitsInStock)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            var base64 = Convert.ToBase64String(item.Picture);
+            var imgSrc = string.Format("data:image/jpeg; base64, {0}", base64);
+
+            <tr>
+                <td>
+                    <a class="productImg"><img id="@item.ProductId" src="@imgSrc" onclick="displayDetail(this.id)" /></a>
+                </td>
+                <td>
+                    <a class="productName" id="@item.ProductId" onclick="displayDetail(this.id)">@Html.DisplayFor(modelItem => item.ProductName)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitsInStock)
+                </td>
+                <td>
+                    <input type="button" value="Purchase" id="@item.ProductId" onclick="displayDetail(this.id)"/>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

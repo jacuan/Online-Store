@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d1782b39c928435f907cd54f58a620bd" Name="Diagram1">
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.Address" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.AddressType" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.Contact" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.ContactType" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.Customer" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.Employee" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.Invoiced" Width="1.5" PointX="12.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.Order" Width="1.5" PointX="10.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.OrderDetail" Width="1.5" PointX="15.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.Product" Width="1.5" PointX="13.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.ProductCategory" Width="1.5" PointX="11.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.Retailer" Width="1.5" PointX="11.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.Role" Width="1.5" PointX="10.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.Shipper" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.ShipperOption" Width="1.5" PointX="10.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.ShippingLocation" Width="1.5" PointX="8.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.ShippingMethod" Width="1.5" PointX="8.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DigitalXDB_JackyWebModel.sysdiagram" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_Address_AddressType" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_Order_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_Contact_ContactType" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_Order_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_Invoiced_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_OrderDetail_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_Invoiced_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_Invoiced_ShipperOptions" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_OrderDetail_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_OrderDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_Product_ProductCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_Product_Retailer" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_ShipperOptions_Shipper" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_ShipperOptions_ShippingLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.FK_ShipperOptions_ShippingMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.CustomerAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.CustomerContact" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.EmployeeAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.EmployeeContact" ManuallyRouted="false" />
+        <AssociationConnector Association="DigitalXDB_JackyWebModel.EmployeeRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fb33dc89-fd89-49ec-96bd-ff1bb0e7f4b6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wcfdigitalx.azurewebsites.net/OrderInformationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OrderInformationService4.xsd" MetadataType="Schema" ID="490fed9f-a70e-496c-ac92-1a11d0c6096e" SourceId="1" SourceUrl="http://wcfdigitalx.azurewebsites.net/OrderInformationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="OrderInformationService41.xsd" MetadataType="Schema" ID="68f88c9d-ea30-4ce4-9943-ad12e901e188" SourceId="1" SourceUrl="http://wcfdigitalx.azurewebsites.net/OrderInformationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OrderInformationService42.xsd" MetadataType="Schema" ID="8a976212-85ef-41b4-a4f3-d2d3e943d8f6" SourceId="1" SourceUrl="http://wcfdigitalx.azurewebsites.net/OrderInformationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="OrderInformationService1.disco" MetadataType="Disco" ID="9a68db57-29fa-4ad1-9660-7ae1ff20d9d8" SourceId="1" SourceUrl="http://wcfdigitalx.azurewebsites.net/OrderInformationService.svc?disco" />
+    <MetadataFile FileName="OrderInformationService1.wsdl" MetadataType="Wsdl" ID="6efdc5c9-3e03-4126-b2c5-f6e6642e7bc9" SourceId="1" SourceUrl="http://wcfdigitalx.azurewebsites.net/OrderInformationService.svc?wsdl" />
+    <MetadataFile FileName="OrderInformationService43.xsd" MetadataType="Schema" ID="6eb39745-7014-4825-a7eb-8db4e5c77963" SourceId="1" SourceUrl="http://wcfdigitalx.azurewebsites.net/OrderInformationService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

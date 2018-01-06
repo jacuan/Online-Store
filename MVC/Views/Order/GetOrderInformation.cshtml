@@ -1,0 +1,84 @@
+﻿@{
+    Layout = "~/Views/Shared/_MemberCenterLayout.cshtml";
+
+}
+
+@model IEnumerable<DigitalXData.OrderedItem>
+
+@{
+    ViewBag.Title = "GetOrderInformation";
+}
+
+<div>
+
+    <h2>Your Order Information</h2>
+
+    @if (Model != null)
+    {
+        <table class="table">
+            <tr>
+                <th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Complete)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsBackOrder)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Unit Price
+                </th>
+            </tr>
+           
+            @foreach (var item in Model)
+            {
+                var base64 = Convert.ToBase64String(item.Product.Picture);
+                var imgSrc = string.Format("data:image/jpeg; base64, {0}", base64);
+
+                <tr>
+                    <td>
+                        <img src="@imgSrc" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderDate)
+                    </td>
+                    <td>
+                        @(item.Complete ? "Yes" : "No")
+                    </td>
+                    <td>
+                        @(item.IsBackOrder ? "Yes" : "No")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.Price)
+                    </td>
+                </tr>
+            }
+        </table> 
+        <br />
+        <br />
+    }
+    else
+    {
+        <h2>@ViewBag.errorMessage</h2>
+    }
+</div>
